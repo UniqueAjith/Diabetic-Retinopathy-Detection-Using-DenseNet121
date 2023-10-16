@@ -1,0 +1,71 @@
+h2{
+    margin-top: 90px;
+
+    text-align: center;
+}
+.form_container{
+    margin-top: 30px;
+    margin-left: 28%;
+    max-width: 50%;
+
+}
+.form_container .form_group .element{
+    display:inline-block;
+    /* border: 2px solid white; */
+    border: 1px solid #11a2d7;
+    padding: 3px 3px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    width: 290px;
+    border-radius: 5px;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+}
+.form_container .form_group .element input{
+    outline: none;
+    border: none;
+    
+    background: none;
+    width: 100%;
+    opacity: 0.9;
+    color: #333;
+    font-size: 17px;
+    
+}
+.form_container .form_group .element select{
+    background:none;
+    outline: none;
+    border: none;
+    width: 100%;
+    color: #333;
+    font-size: 17px;
+    font-weight: 500;
+}
+.form_container .form_group .element_one{
+    width: 90%;
+    /* border: 1px solid #fff;   */
+    border: 1px solid #11a2d7;
+    margin-bottom: 30px;
+    padding: 3px 3px; 
+    border-radius: 5px;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+}
+.form_container .form_group .element_one input{
+    outline: none;
+    border: none;
+    background: none;
+    width: 100%;
+    opacity: 0.9;
+    color: #333;
+    font-size: 17px;
+}
+.form_container .form_group .element_one input[type='submit']{
+    padding: 8px 0px;
+    cursor: pointer;
+    background: #131a2f;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}

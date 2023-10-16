@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <title>Document</title><script src="/static/js/script.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/register.css">
+</head>
+<style>
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  backdrop-filter: blur(5px);
+  background-color: rgba(93, 91, 91, 0.4);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal input{
+    display: block;
+    font-size: 18px;
+    width: 400px;
+    outline: none;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.modal label{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px;
+}
+.modal h2{
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+.modal #login-button{
+    max-width: 92%;
+    width: 100%;
+    margin: 10px;
+    padding: 8px 0px;
+    cursor: pointer;
+    background: #131a2f;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+</style>
+<body>
+    <section class="navbar">
+        <div class="container">
+            <div class="icon">
+                <h3>DR <span>Detection</span></h3>
+            </div>
+            <ul class="nav_content">
+                <li>
+                    <a href="/">Home</a>
+                    <button id="login-button">Log In</button>
+                </li>
+            </ul>
+        </div>
+        
+    </section>
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Log In</h2>
+          <form method="POST" action="/">
+            <label for="email">Username</label><br>
+            <input type="email" id="email" name="email" required><br>
+    
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" required>
+    
+            <input type="submit" value="Login In" id="login-button">
+          </form>
+        </div>
+      </div>
+    <section class="register">
+        <div class="container">
+            <div class="heading">
+                <h4>Welcome to DR Detection</h4>
+                <h2>Create New account</h2>
+            </div>
+        </div>
+        <div class="form_content">
+            <form action="/Register" method="POST">
+                <div class="form_group_two">
+                    <div class="element">
+                        <label for="firstname">First Name:</label><br>
+                        <input type="text" name="firstname" id="firstname">
+                    </div>
+                    <div class="element">
+                        <label for="lastname">Last Name:</label><br>
+                        <input type="text" name="lastname" id="lastname">
+                    </div>
+                </div>
+                <div class="form_group_one">
+                    <div class="element">
+                        <label for="email">Email :</label><br>
+                        <input type="email" name="email" id="email">
+                    </div>
+                </div>
+                <div class="form_group_one">
+                    <div class="element">
+                        <label for="password">Password :</label><br>
+                        <input type="password" name="password" id="password">
+                    </div>
+                </div>
+                <div class="form_group_one">
+                    <div class="element">
+                        <label for="confirm_password">Confirm Password:</label><br>
+                        <input type="password" name="password" id="firstname">
+                    </div>
+                </div>
+                <div class="form_group_one">
+                    <div class="element">
+                        <input type="submit" value="Create Account">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+<script>
+    const loginButton = document.getElementById('login-button');
+const loginModal = document.getElementById('login-modal');
+const closeButton = document.querySelector('.close');
+const body = document.querySelector('body');
+
+loginButton.addEventListener('click', () => {
+  loginModal.style.display = 'block';
+  body.classList.add('blur');
+});
+
+closeButton.addEventListener('click', () => {
+  loginModal.style.display = 'none';
+  body.classList.remove('blur');
+});
+</script>
+</html>

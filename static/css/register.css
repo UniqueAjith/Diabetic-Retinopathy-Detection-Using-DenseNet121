@@ -1,0 +1,87 @@
+.register{
+    background-image: url('/static/images/back.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+    color: white;
+    overflow-x: hidden;
+}
+.navbar{
+    background: none;
+}
+.navbar .container  ul li a,.navbar .container  ul li button,.navbar .container .icon h3{
+    color: white;
+}
+.container .heading{
+    position: absolute;
+    top: 18%;
+    left: 20%; 
+}
+.container .heading h2,h4{
+    color: #ffffff;
+    padding: 10px 0;
+}
+.container .heading h2{
+    font-size: 38px;
+}
+.container .heading h4{
+    font-size: 18px;
+}
+.form_content{
+    position: relative;
+    top: 33%;
+    left: 20%;
+    opacity: 1;
+}
+.form_content .form_group_two .element{
+    display: inline-block;
+    background: #151e3d;
+    border-radius: 5px;
+    
+    width: 250px;
+    margin-right: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.form_content .form_group_two .element label{
+    padding: 4px 8px;
+}
+.form_content .form_group_two .element input{
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    width:100%;
+}
+.form_content .form_group_one{
+    margin-top: 20px;
+    background: #151e3d;
+    opacity: 1;
+    border-radius: 5px;
+    width: 530px;
+    margin-right: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.form_content .form_group_one .element label{
+    padding: 4px 8px;
+    opacity: 1;
+}
+.form_content .form_group_one .element input{
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    width:100%;
+}
+.form_content .form_group_one .element input[type='submit']{
+    padding: 15px 0px;
+    font-size: 18px;
+    opacity: 1;
+    color:#ffffff;
+    background:#0197f6;
+    border-radius: 3px;
+}

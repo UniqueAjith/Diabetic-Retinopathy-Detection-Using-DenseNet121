@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/update.css">
+</head>
+<body>
+    <section class="navbar">
+        <div class="container">
+            <div class="icon">
+                <h3>DR <span>Detection</span></h3>
+            </div>
+            <ul class="nav_content">
+                <li>
+                    <a href="/add_record">Dashboard</a>
+                    <a href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+        
+    </section>
+    <h2>UPDATE RECORD</h2>
+    <div class="form_container">
+        <form action="{{url_for('update',id=data['PatientId'])}}" method="POST" enctype="multipart/form-data">
+            <div class="form_group">
+                <div class="element">
+                    <label for="name">Patient Name:</label><br>
+                    <input type="text" value="{{data['name']}}" name="name" id="name">
+                </div>
+                <div class="element">
+                    <label for="age">Patient Age:</label><br>
+                    <input type="number" value="{{data['age']}}" name="age" id="age">
+                </div>
+            </div>
+            <div class="form_group">
+                <div class="element">
+                    <label for="gender">Patient Gender:</label><br>
+
+                        <select id="gender" name="gender">
+                            <option value="{{data['gender']}}">{{data['gender']}}</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </select>
+                </div>
+                <div class="element">
+                    <label for="phone">Mobile No:</label><br>
+                    <input type="tel" value="{{data['phone']}}" name="phone" id="phone">
+                </div>
+            </div>
+            <div class="form_group">
+                <div class="element_one">
+                    <label for="email">Email :</label><br>
+                    <input type="email" name="email" value="{{data['email']}}" id="email">
+                </div>
+            </div>
+            <div class="form_group">
+                <div class="element_one">
+                    <label for="image">Image :</label><br>
+                    <input type="file" accept="image/png, image/gif, image/jpeg" name="image" id="image">
+                </div>
+            </div>
+            <div class="form_group">
+                <div class="element_one">
+                    <input type="submit" value="Update and Predict">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

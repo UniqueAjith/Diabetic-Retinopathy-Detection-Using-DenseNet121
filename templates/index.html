@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/script.js"></script>
+    <style>
+            .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  backdrop-filter: blur(5px);
+  background-color: rgba(93, 91, 91, 0.4);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal input{
+    display: block;
+    font-size: 18px;
+    width: 400px;
+    outline: none;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.modal label{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 10px;
+}
+.modal h2{
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+.modal #login-button{
+    max-width: 92%;
+    width: 100%;
+    margin: 10px;
+    padding: 8px 0px;
+    cursor: pointer;
+    background: #131a2f;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+    </style>
+</head> 
+<body>
+    <img class="staic_image" src="/static/images/back.jpg" width="100%" height="700px" alt="" srcset="">
+    <section class="navbar">
+        <div class="container">
+            <div class="icon">
+                <h3>DR <span>Detection</span></h3>
+            </div>
+            <ul class="nav_content">
+                <li>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <button id="login-button">Log In</button>
+                    <a href="/Register">Register</a>
+                </li>
+            </ul>
+        </div>
+        
+    </section>
+   
+ 
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Log In</h2>
+          <form method="POST" action="/">
+            <label for="email">Username</label><br>
+            <input type="email" id="email" name="email" required><br>
+    
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" required>
+    
+            <input type="submit" value="Log In" id="login-button">
+          </form>
+        </div>
+      </div>
+    
+    <main>
+        <div class="scrolling-content">
+            <div class="home_content">
+                <h3>Diabetic Retinopathy Detection</h3>
+                <p>AFFECTS ONE IN THREE PEOPLE LIVING WITH DIABETES AND IS THE LEADING CAUSE OF VISION LOSS IN WORKING-AGE ADULTS</p>
+            </div>
+            <div class="about" id="about">
+                <div class="contain">
+                    <h3>Diabetic Retinopathy: A Leading Cause of Blindness in India's Diabetic Population</h3>
+                    <p>Diabetic retinopathy (DR)<span>is one of the most prevalent eye afflictions in existence today in India, with an estimated 98 million diabetic individuals in the country.</span> This condition is unique to those who suffer from diabetes mellitus, commonly referred to as diabetes, and is the leading cause of blindness in the diabetic population in India. The impact of diabetic retinopathy is profound, garnering substantial attention from the medical community at large in the country. Fortunately, DR is both routinely detectable and highly treatable, particularly when addressed in its earlier stages. In addition, significant technological advancements have been made recently to further address the issue in India.</p>                </div>
+            </div>
+            <div class="about_dr">
+                <div class="container">
+                    <div class="cause">
+                        <h2>What causes DR?</h2>
+                        <p>Diabetic retinopathy is a regular result of damage to blood vessels and neurons located in the retina. These delicate blood vessels are particularly vulnerable to the fluctuations in blood sugar that characterize diabetes, which causes them to constrict as a result. In the earlier stages of development, constriction of retinal arteries reduces blood flow and leads to dysfunction of neurons located in the inner retina. As the condition progresses, dysfunction tends to spread to neurons of the outer retina and the blood-retinal barrier, which protects the retina from toxins. Damage to vital neurons occurs when the barrier begins to leak fluid, and toxins contained within, into the retinal neurophile. In the latter stages, capillary vessels degenerate and lead to further loss of blood flow causing bulges in the capillary walls, known as microaneurysms. These deformities attract inflammatory cells, and advanced dysfunction of retinal neurons eventually ensues.</p>
+                    </div>
+                    <div class="symptoms">
+                        <h2>Symptoms of DR?</h2>
+                        <p>One of the most troubling aspects of DR is the fact that the early stages of development often result in no noticeable symptoms. Unfortunately, lack of symptoms does not indicate a lack of damage in this case. It is not until the later stages, which commonly occur years after initial development, in which symptoms such as reduced visual acuity and eventual blindness begin to manifest. At this stage, the options for treatment and the prognosis for recovery are much more grim, making it extremely important to catch the issue early on. Everyone living with diabetes should opt for periodic screenings through an eye-care specialist.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="stages">
+                <h2>Stages of Diabetic Retinopathy</h2>
+                <p>Diabetic Retinopathy is a progressive disease, meaning that signs and symptoms develop and become more severe over time. This progression is categorized into four distinct stages which are identified by the nature and severity of symptoms found to be present.</p>
+                <div class="four_stages">
+                    <div class="container">
+                        <h2>
+                            Mild NPDR
+                        </h2>
+                        <p>
+                            The first stage of retinopathy (mild non proliferative DR) is characterized by small, relatively sparse clusters of balloon-like swelling in retinal blood vessels. These microaneurysms, as they are called, have the potential to leak fluid into the retina. While the physical manifestations of this stage may be negligible, the implications for future degeneration can be quite severe, so catching and treating DR at this stage is most beneficial for one’s future health.
+                        </p>
+                    </div>
+                    <div class="container">
+                        <h2>
+                            Moderate NPDR
+                        </h2>
+                        <p>
+                            During this second stage of DR (moderate non-proliferative DR), blood vessels that sustain the retina begin to swell and distort, in some cases reducing their ability to transport blood. Not only does this cause noticeable characteristic changes to the appearance of the retina itself, it may also contribute to the development Diabetic Macular Edema (DME)—a harmful buildup of fluid in the macular area of the retina.    
+                        </p>
+                    </div>
+                    <div class="container">
+                        <h2>
+                            Severe NPDR
+                        </h2>
+                        <p>This stage is characterized by large numbers of blockages which deprive the retina of vital blood flow. The defining feature of this stage is the secretion of growth factors which signal the retina to grow new blood vessels to supplement those which have become invalid.</p>   
+                    </div>
+                    <div class="container">
+                        <h2>
+                            Proliferative DR
+                        </h2>
+                        <p>The latest, and most debilitating stage of DR, is characterized by advanced proliferation of new blood vessels along the inner surface of the retina and into the vitreous gel that fills the eye. Most troubling is the fragile nature of these new vessels, which often causes them to leak and bleed into the eye. As this occurs, scar tissue develops which may contract and cause the retina to actually detach from the underlying tissue, leading to severe and sometimes permanent vision loss.</p>   
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <p>&#169; All right reserved 2023</p>
+            </footer>
+        </div>
+     </main>
+    
+</body>
+<script>
+    const loginButton = document.getElementById('login-button');
+const loginModal = document.getElementById('login-modal');
+const closeButton = document.querySelector('.close');
+const body = document.querySelector('body');
+
+loginButton.addEventListener('click', () => {
+  loginModal.style.display = 'block';
+  body.classList.add('blur');
+});
+
+closeButton.addEventListener('click', () => {
+  loginModal.style.display = 'none';
+  body.classList.remove('blur');
+});
+</script>
+</html>

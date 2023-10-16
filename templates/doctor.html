@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/doctor.css">
+    <script src="/static/js/script.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+</head>
+<body>
+    <section class="navbar">
+        <div class="container">
+            <div class="icon">
+                <h3>DR <span>Detection</span></h3>
+            </div>
+            <ul class="nav_content">
+                <li>
+                    <a href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+        
+    </section>
+    <div class="heading_content">
+        <div class="title">
+            <h3>Patient Details</h3>
+        </div>
+        <div class="modal_btn">
+            <button onclick="document.getElementById('id').style.display='block'" style="width:auto;">+ Add New Patient</button>
+        </div>
+    </div>
+    <div class="modal_container">
+        <div id="id" class="modal">
+            <p onclick="document.getElementById('id').style.display='none'" class="close" title="Close Modal">&times;</p>
+            <h3>Details About Patient</h3>
+            <form action="/add_record" method="POST"  enctype="multipart/form-data">
+                <div class="form_group">
+                    <div class="element">
+                        <label for="name">Patient Name:</label><br>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div class="element">
+                        <label for="age">Patient Age:</label><br>
+                        <input type="number" name="age" id="age">
+                    </div>
+                </div>
+                <div class="form_group">
+                    <div class="element">
+                        <label for="gender">Patient Gender:</label><br>
+    
+                            <select id="gender" name="gender">
+                                <option value="">--Please choose an option--</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="others">Others</option>
+                            </select>
+                    </div>
+                    <div class="element">
+                        <label for="phone">Mobile No:</label><br>
+                        <input type="tel" name="phone" id="phone">
+                    </div>
+                </div>
+                <div class="form_group">
+                    <div class="element_one">
+                        <label for="email">Email :</label><br>
+                        <input type="email" name="email" id="email">
+                    </div>
+                </div>
+                <div class="form_group">
+                    <div class="element_one">
+                        <label for="image">Image :</label><br>
+                        <input type="file" accept="image/png, image/gif, image/jpeg" name="image" id="image">
+                    </div>
+                </div>
+                <div class="form_group">
+                    <div class="element_one">
+                        <input type="submit" value="Add and Predict" onclick=" download()">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="table" >
+        <div class="container">
+            <table style="overflow-x: scroll;">
+                <thead>
+                    <tr>
+                        <th>SI.No</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>gender</th>
+                        <th>phone</th>
+                        <th>email</th>
+                        <th>stage</th>
+                        <th>Update</th>
+                        <th>Report</th>
+                        <th>Send To email</th>
+                        <th>Delete</th>
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    {%for res in data %}
+                    {% set i= loop.index %}
+                        <tr>
+                            <td>{{i}}</td>
+                            <td>{{res['name']}}</td>
+                            <td>{{res['age']}}</td>
+                            <td>{{res['gender']}}</td>
+                            <td>{{res['phone']}}</td>
+                            <td>{{res['email']}}</td>
+                            <td>{{res['stage']}}</td>
+                            <td ><a href="{{url_for('update',id=res['PatientId'])}}" class="btn-update">update</a></td>
+                            <td ><a href="{{url_for('generate_certificate',id=res['PatientId'])}}" class="btn-update">Download</a></td>
+                            <td ><a href="{{url_for('send_certificate',id=res['PatientId'])}}" class="btn-update">Send</a></td>
+                            <td ><a href="{{url_for('delete',id=res['PatientId'])}}" class="btn-delete">delete</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      utilsScript:
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+    
+  </script>
+</html>
